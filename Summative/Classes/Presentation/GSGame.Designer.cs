@@ -1,5 +1,6 @@
 ﻿using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml;
+using System.Xml.Serialization;
 namespace GoblinSlayer
 {
     partial class Game
@@ -31,7 +32,6 @@ namespace GoblinSlayer
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.dungeonMap = new System.Windows.Forms.Label();
             this.statsContainer = new System.Windows.Forms.GroupBox();
             this.playerStats = new System.Windows.Forms.Label();
@@ -108,6 +108,7 @@ namespace GoblinSlayer
             this.playerStats.Size = new System.Drawing.Size(44, 21);
             this.playerStats.TabIndex = 0;
             this.playerStats.Text = "Stats";
+            this.playerStats.Click += new System.EventHandler(this.playerStats_Click);
             // 
             // playerHelpContainer
             // 

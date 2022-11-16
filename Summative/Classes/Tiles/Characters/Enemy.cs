@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace GoblinSlayer.Characters
 {
     [Serializable]
-    abstract class Enemy : Character
+    public abstract class Enemy : Character
     {
         //random object 
         protected Random rnd = new Random();

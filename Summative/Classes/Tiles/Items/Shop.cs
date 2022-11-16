@@ -1,11 +1,17 @@
-﻿using System;
+﻿using GoblinSlayer.Characters;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using static GoblinSlayer.Classes.Tiles.Items.MeleeWeapon;
 using static GoblinSlayer.Classes.Tiles.Items.RangedWeapon;
+
 
 namespace GoblinSlayer.Classes.Tiles.Items
 {
     [Serializable]
-    class Shop
+    public class Shop
     {
         public enum ShopWeaponTypes
         {

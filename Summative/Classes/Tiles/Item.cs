@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace GoblinSlayer.Classes.Tiles
 {
     [Serializable]
-    abstract class Item : Tile
+    public abstract class Item : Tile
     {
 
         public Item(int x, int y, char symbol) : base(x, y, symbol)

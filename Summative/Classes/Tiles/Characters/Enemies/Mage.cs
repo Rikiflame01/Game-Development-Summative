@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace GoblinSlayer.Characters
 {
     [Serializable]
-    class Mage : Enemy
+    public class Mage : Enemy
     {
         public Mage(int x, int y) : base(x, y, 'M', 5, 5)
         {

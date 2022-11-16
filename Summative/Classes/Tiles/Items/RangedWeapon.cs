@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace GoblinSlayer.Classes.Tiles.Items
 {
     [Serializable]
-    class RangedWeapon : Weapon
+    public class RangedWeapon : Weapon
     {
         public enum RangedTypes
         {

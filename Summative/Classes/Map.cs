@@ -1,13 +1,18 @@
-﻿using System;
+﻿using GoblinSlayer.Classes.Tiles;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using GoblinSlayer.Classes.Tiles.Items;
 
 namespace GoblinSlayer.Classes
 {
     [Serializable]
-    class Map
+    public class Map
     {
-        //Obect for a random enemy.
+        #region Declarations
+        //Object for a random enemy.
         Random rnd = new Random();
 
         //map dimensions
@@ -49,15 +54,16 @@ namespace GoblinSlayer.Classes
             get { return enemyNum; }
             set { enemyNum = value; }
         }
+        #endregion
 
-
-
+      
         public Tile[,] MapTiles
         {
             get { return dungeonMap; }
             set { dungeonMap = value; }
         }
 
+        #region Constructors
         public Map(int minWidth, int maxWidth, int minHeight, int maxHeight, int enemyNum, int GDropsMax)
         {
             Random rnd = new Random();
@@ -151,7 +157,9 @@ namespace GoblinSlayer.Classes
 
             UpdateVision();
         }
+        #endregion
 
+        #region Class methods
         public void Create(Tile tile)
         {
             dungeonMap[tile.X, tile.Y] = tile;
@@ -442,5 +450,6 @@ namespace GoblinSlayer.Classes
 
             }
         }
+        #endregion
     }
 }

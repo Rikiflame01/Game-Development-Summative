@@ -1,10 +1,15 @@
-﻿using System;
+﻿using GoblinSlayer.Classes.Tiles.Items;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace GoblinSlayer
 {
     [Serializable]
     // Base class for tiles.
-    abstract class Tile
+    public abstract class Tile
     {
         //Variables
         protected int x;
