@@ -492,5 +492,11 @@ namespace GoblinSlayer
         {
             this.Focus();
         }
+
+        private void GIWindow_Click(object sender, EventArgs e)
+        {
+            Info info = new Info();
+            info.Show();
+        }
     }
 }

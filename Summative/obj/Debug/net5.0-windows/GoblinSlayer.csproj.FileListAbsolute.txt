@@ -1,0 +1,10 @@
+C:\Users\Damian\Documents\Vega-University\Game-Dev-and-Design-S2\GADE\POE\Summative\Summative\Summative\obj\Debug\net5.0-windows\GoblinSlayer.csproj.AssemblyReference.cache
+C:\Users\Damian\Documents\Vega-University\Game-Dev-and-Design-S2\GADE\POE\Summative\Summative\Summative\obj\Debug\net5.0-windows\GoblinSlayer.DeathScreen.resources
+C:\Users\Damian\Documents\Vega-University\Game-Dev-and-Design-S2\GADE\POE\Summative\Summative\Summative\obj\Debug\net5.0-windows\GoblinSlayer.Game.resources
+C:\Users\Damian\Documents\Vega-University\Game-Dev-and-Design-S2\GADE\POE\Summative\Summative\Summative\obj\Debug\net5.0-windows\GoblinSlayer.Info.resources
+C:\Users\Damian\Documents\Vega-University\Game-Dev-and-Design-S2\GADE\POE\Summative\Summative\Summative\obj\Debug\net5.0-windows\GoblinSlayer.WinScreen.resources
+C:\Users\Damian\Documents\Vega-University\Game-Dev-and-Design-S2\GADE\POE\Summative\Summative\Summative\obj\Debug\net5.0-windows\GoblinSlayer.csproj.GenerateResource.cache
+C:\Users\Damian\Documents\Vega-University\Game-Dev-and-Design-S2\GADE\POE\Summative\Summative\Summative\obj\Debug\net5.0-windows\GoblinSlayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Damian\Documents\Vega-University\Game-Dev-and-Design-S2\GADE\POE\Summative\Summative\Summative\obj\Debug\net5.0-windows\GoblinSlayer.AssemblyInfoInputs.cache
+C:\Users\Damian\Documents\Vega-University\Game-Dev-and-Design-S2\GADE\POE\Summative\Summative\Summative\obj\Debug\net5.0-windows\GoblinSlayer.AssemblyInfo.cs
+C:\Users\Damian\Documents\Vega-University\Game-Dev-and-Design-S2\GADE\POE\Summative\Summative\Summative\obj\Debug\net5.0-windows\GoblinSlayer.csproj.CoreCompileInputs.cache

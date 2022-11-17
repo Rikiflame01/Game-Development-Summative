@@ -55,6 +55,7 @@ namespace GoblinSlayer
             this.saveButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.LoadButton = new System.Windows.Forms.Button();
+            this.GIWindow = new System.Windows.Forms.Button();
             this.statsContainer.SuspendLayout();
             this.playerHelpContainer.SuspendLayout();
             this.enemyListContainer.SuspendLayout();
@@ -262,6 +263,7 @@ namespace GoblinSlayer
             // 
             this.Background.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Background.BackColor = System.Drawing.Color.Black;
+            this.Background.Controls.Add(this.GIWindow);
             this.Background.Controls.Add(this.ShopContainer);
             this.Background.Controls.Add(this.dungeonMap);
             this.Background.Controls.Add(this.ItemContainer);
@@ -417,6 +419,17 @@ namespace GoblinSlayer
             this.LoadButton.UseVisualStyleBackColor = false;
             this.LoadButton.Click += new System.EventHandler(this.button1_Click);
             // 
+            // GIWindow
+            // 
+            this.GIWindow.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.GIWindow.Location = new System.Drawing.Point(67, 544);
+            this.GIWindow.Name = "GIWindow";
+            this.GIWindow.Size = new System.Drawing.Size(179, 72);
+            this.GIWindow.TabIndex = 16;
+            this.GIWindow.Text = "Game Information";
+            this.GIWindow.UseVisualStyleBackColor = true;
+            this.GIWindow.Click += new System.EventHandler(this.GIWindow_Click);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -482,5 +495,6 @@ namespace GoblinSlayer
         public GroupBox scoutedEnemyContainer;
         public GroupBox itemListContainer;
         public GroupBox ItemContainer;
+        private Button GIWindow;
     }
 }
