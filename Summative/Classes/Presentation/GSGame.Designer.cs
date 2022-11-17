@@ -146,9 +146,9 @@ namespace GoblinSlayer
             this.moveControls.Location = new System.Drawing.Point(34, 28);
             this.moveControls.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.moveControls.Name = "moveControls";
-            this.moveControls.Size = new System.Drawing.Size(139, 56);
+            this.moveControls.Size = new System.Drawing.Size(139, 84);
             this.moveControls.TabIndex = 0;
-            this.moveControls.Text = "Item list:  I\r\nEnemy List: M\r\n";
+            this.moveControls.Text = "Item list:  I\r\nEnemy List: M\r\nAttack: K";
             this.moveControls.Click += new System.EventHandler(this.moveControls_Click);
             // 
             // viewEnemies
@@ -168,6 +168,7 @@ namespace GoblinSlayer
             this.viewEnemies.Size = new System.Drawing.Size(560, 28);
             this.viewEnemies.TabIndex = 4;
             this.viewEnemies.TabStop = false;
+            this.viewEnemies.SelectedIndexChanged += new System.EventHandler(this.viewEnemies_SelectedIndexChanged);
             this.viewEnemies.SelectionChangeCommitted += new System.EventHandler(this.enemyDropdown_SelectionChangeCommitted);
             // 
             // enemyListContainer
@@ -373,6 +374,7 @@ namespace GoblinSlayer
             this.viewItems.Size = new System.Drawing.Size(451, 28);
             this.viewItems.TabIndex = 4;
             this.viewItems.TabStop = false;
+            this.viewItems.SelectedIndexChanged += new System.EventHandler(this.viewItems_SelectedIndexChanged);
             this.viewItems.SelectionChangeCommitted += new System.EventHandler(this.itemDropdown_SelectionChangeCommitted);
             // 
             // saveButton

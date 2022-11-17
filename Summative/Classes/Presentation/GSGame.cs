@@ -21,6 +21,8 @@ namespace GoblinSlayer
     public partial class Game : Form
     {
         #region Declarations
+
+
         //Game engine class
         GameEngine game = new GameEngine();
 
@@ -57,7 +59,7 @@ namespace GoblinSlayer
             //Hides the selections.
             viewEnemies.Hide();
             viewItems.Hide();
-
+            viewItems.Focus();
             //resets selections.
             viewEnemies.Enabled = false;
             viewItems.Enabled = false;
@@ -67,6 +69,11 @@ namespace GoblinSlayer
 
             ItemMessages.Visible = false;
             interactionMsgs.Text = "";
+            Info info = new Info();
+            info.Show();
+            info.BringToFront();
+            
+
         }
 
         private void DrawMap()
@@ -475,5 +482,15 @@ namespace GoblinSlayer
 
         }
         #endregion
+
+        private void viewEnemies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.Focus();
+        }
+
+        private void viewItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.Focus();
+        }
     }
 }
