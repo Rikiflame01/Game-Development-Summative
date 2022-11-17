@@ -1,13 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using GoblinSlayer;
 using GoblinSlayer.Characters;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using GoblinSlayer.Classes.Tiles.Items;
+using System.Runtime.Serialization;
 
 namespace GoblinSlayer.Classes
 {
     [Serializable]
-    class GameEngine
+    public class GameEngine
     {
-
+        #region Declarations
         //Tile representations.
         private static readonly char heroTile = 'H';
         private static readonly char emptyTile = ' ';
@@ -20,6 +29,8 @@ namespace GoblinSlayer.Classes
         private static readonly char range = '•';
 
         private Map map;
+        #endregion
+
 
         public Map Map
         {

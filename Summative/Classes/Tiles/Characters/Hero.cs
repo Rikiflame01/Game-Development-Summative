@@ -1,10 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using GoblinSlayer.Classes.Tiles;
 using GoblinSlayer.Classes.Tiles.Items;
 
 namespace GoblinSlayer.Characters
 {
     [Serializable]
-    class Hero : Character
+    public class Hero : Character
     {
         public Hero(int x, int y) : base(x, y, 'H', 2, 50)
         {

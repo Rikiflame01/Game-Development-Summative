@@ -1,11 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using GoblinSlayer.Classes.Tiles.Items;
+using GoblinSlayer.Classes.Tiles;
 using GoblinSlayer.Characters;
 
 namespace GoblinSlayer
 {
     [Serializable]
-    abstract class Character : Tile
+    public abstract class Character : Tile
     {
         //Member Variables
         protected int hp;
@@ -15,6 +20,7 @@ namespace GoblinSlayer
 
         protected Weapon weapon;
 
+        #region public accessors
         public Weapon Weapon
         {
             get { return weapon; }
@@ -49,6 +55,7 @@ namespace GoblinSlayer
             get { return visionArray; }
             set { visionArray = value; }
         }
+        #endregion
 
         // character vision array: north, south, west, east; respectively.
         private Tile[] visionArray = new Tile[4];
@@ -65,14 +72,15 @@ namespace GoblinSlayer
             RIGHT,
         }
 
-        //Character Methods
+
         public Character(int x, int y, char symbol, int damage, int maxHP) : base(x, y, symbol)
         {
             this.damage = damage;
             this.maxHP = maxHP;
             this.hp = maxHP;
         }
-
+        #region Character Methods
+        //Character Methods
         public void PickUp(Gold item)
         {
             if (item.GetType() == typeof(Gold))
@@ -366,5 +374,6 @@ namespace GoblinSlayer
 
         public abstract override string ToString();
         //defined in char subclasses.
+        #endregion
     }
 }

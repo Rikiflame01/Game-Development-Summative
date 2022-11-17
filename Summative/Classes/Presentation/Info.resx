@@ -1,0 +1,112 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>X is an obstacle! 
+O You can't move past an obstacle! 
+Obsicals are seens as X's! 
+O All enemies
+-(Swamp creatures, Leaders and Mages )-
+ move only when the player moves.
+O All enemies attack after they move.
+O All enemies attack after the player attacks
+(but they do not move in this case).
+
+H is the Hero!  
+O The Hero has a range of 1! 
+O Hero's bare-hand damage Is 2.
+O You'll attack the enemies closest to you!
+
+L is for the leader enemy!
+O Leaders will relentlessly chase the player.
+O Leaders have 20 HP
+O Leaders do 2 damage
+
+M is for the mage enemy.
+O Mages have 5 HP
+O Mages do 5 damage
+O Mages do friendly damage in a 1 block radius!
+
+SC are Swamp Creatures
+O Swampcreatures move randomly!</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Rifle Stats: 
+O Its durability is 3
+O Its range is 3
+O Its damage is 5
+O Its cost is 7
+
+Longbow stats:
+O Its durability is 4
+O Its range is 2
+O Its damage is 4
+O Its cost is 6
+
+Dagger Stats:
+O Its durability is 10
+O Its damage is 3
+O Its cost is 3
+
+LongSword Stats:
+O Its durability is 6
+O Its damage is 4
+O Its cost is 5</value>
+  </data>
+</root>

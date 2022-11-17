@@ -1,5 +1,6 @@
 ﻿using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml;
+using System.Xml.Serialization;
 namespace GoblinSlayer
 {
     partial class Game
@@ -31,7 +32,6 @@ namespace GoblinSlayer
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.dungeonMap = new System.Windows.Forms.Label();
             this.statsContainer = new System.Windows.Forms.GroupBox();
             this.playerStats = new System.Windows.Forms.Label();
@@ -55,6 +55,7 @@ namespace GoblinSlayer
             this.saveButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.LoadButton = new System.Windows.Forms.Button();
+            this.GIWindow = new System.Windows.Forms.Button();
             this.statsContainer.SuspendLayout();
             this.playerHelpContainer.SuspendLayout();
             this.enemyListContainer.SuspendLayout();
@@ -108,6 +109,7 @@ namespace GoblinSlayer
             this.playerStats.Size = new System.Drawing.Size(44, 21);
             this.playerStats.TabIndex = 0;
             this.playerStats.Text = "Stats";
+            this.playerStats.Click += new System.EventHandler(this.playerStats_Click);
             // 
             // playerHelpContainer
             // 
@@ -145,9 +147,9 @@ namespace GoblinSlayer
             this.moveControls.Location = new System.Drawing.Point(34, 28);
             this.moveControls.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.moveControls.Name = "moveControls";
-            this.moveControls.Size = new System.Drawing.Size(139, 56);
+            this.moveControls.Size = new System.Drawing.Size(139, 84);
             this.moveControls.TabIndex = 0;
-            this.moveControls.Text = "Item list:  I\r\nEnemy List: M\r\n";
+            this.moveControls.Text = "Item list:  I\r\nEnemy List: M\r\nAttack: K";
             this.moveControls.Click += new System.EventHandler(this.moveControls_Click);
             // 
             // viewEnemies
@@ -167,6 +169,7 @@ namespace GoblinSlayer
             this.viewEnemies.Size = new System.Drawing.Size(560, 28);
             this.viewEnemies.TabIndex = 4;
             this.viewEnemies.TabStop = false;
+            this.viewEnemies.SelectedIndexChanged += new System.EventHandler(this.viewEnemies_SelectedIndexChanged);
             this.viewEnemies.SelectionChangeCommitted += new System.EventHandler(this.enemyDropdown_SelectionChangeCommitted);
             // 
             // enemyListContainer
@@ -260,6 +263,7 @@ namespace GoblinSlayer
             // 
             this.Background.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Background.BackColor = System.Drawing.Color.Black;
+            this.Background.Controls.Add(this.GIWindow);
             this.Background.Controls.Add(this.ShopContainer);
             this.Background.Controls.Add(this.dungeonMap);
             this.Background.Controls.Add(this.ItemContainer);
@@ -372,6 +376,7 @@ namespace GoblinSlayer
             this.viewItems.Size = new System.Drawing.Size(451, 28);
             this.viewItems.TabIndex = 4;
             this.viewItems.TabStop = false;
+            this.viewItems.SelectedIndexChanged += new System.EventHandler(this.viewItems_SelectedIndexChanged);
             this.viewItems.SelectionChangeCommitted += new System.EventHandler(this.itemDropdown_SelectionChangeCommitted);
             // 
             // saveButton
@@ -413,6 +418,17 @@ namespace GoblinSlayer
             this.LoadButton.Text = "LOAD";
             this.LoadButton.UseVisualStyleBackColor = false;
             this.LoadButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // GIWindow
+            // 
+            this.GIWindow.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.GIWindow.Location = new System.Drawing.Point(67, 544);
+            this.GIWindow.Name = "GIWindow";
+            this.GIWindow.Size = new System.Drawing.Size(179, 72);
+            this.GIWindow.TabIndex = 16;
+            this.GIWindow.Text = "Game Information";
+            this.GIWindow.UseVisualStyleBackColor = true;
+            this.GIWindow.Click += new System.EventHandler(this.GIWindow_Click);
             // 
             // Game
             // 
@@ -479,5 +495,6 @@ namespace GoblinSlayer
         public GroupBox scoutedEnemyContainer;
         public GroupBox itemListContainer;
         public GroupBox ItemContainer;
+        private Button GIWindow;
     }
 }

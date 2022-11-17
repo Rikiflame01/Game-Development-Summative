@@ -1,17 +1,28 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using GoblinSlayer.Classes;
 using GoblinSlayer.Classes.Tiles.Items;
+using GoblinSlayer.Characters;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Diagnostics;
 using System.Runtime.Serialization;
 
 namespace GoblinSlayer
 {
-
+    [Serializable]
     public partial class Game : Form
     {
+        #region Declarations
+
+
         //Game engine class
         GameEngine game = new GameEngine();
 
@@ -34,7 +45,10 @@ namespace GoblinSlayer
         {
             InitializeComponent();
         }
+        #endregion
 
+
+        #region Methods
         private void Game_Load(object sender, EventArgs e)
         {
             //This method loads the saved file.
@@ -45,7 +59,7 @@ namespace GoblinSlayer
             //Hides the selections.
             viewEnemies.Hide();
             viewItems.Hide();
-
+            viewItems.Focus();
             //resets selections.
             viewEnemies.Enabled = false;
             viewItems.Enabled = false;
@@ -55,6 +69,11 @@ namespace GoblinSlayer
 
             ItemMessages.Visible = false;
             interactionMsgs.Text = "";
+            Info info = new Info();
+            info.Show();
+            info.BringToFront();
+            
+
         }
 
         private void DrawMap()
@@ -117,6 +136,9 @@ namespace GoblinSlayer
             {
                 this.Hide();
                 //This will contain the lose screen.
+                this.KeyPreview = false;
+                DeathScreen death = new DeathScreen();
+                death.Show();
             }
         }
 
@@ -125,12 +147,38 @@ namespace GoblinSlayer
             if (game.Map.enemiesArr.Length == 0)
             {
                 this.Hide();
-
                 //This will contain the win screen.
+                this.KeyPreview = false;
+                WinScreen win = new WinScreen();
+                win.Show();
+
             }
         }
 
-            //Movement
+        private void GDiffCheck()
+        {
+            int newAmount = game.Map.Hero.Wallet;
+            int diff = newAmount - playerGold;
+
+            if (diff < 0)
+            {
+                ItemMessages.Visible = true;
+                ItemMessages.Text = $"Purchased {game.Map.Hero.Weapon} have fun!";
+            }
+
+            else if (diff != 0)
+            {
+                ItemMessages.Visible = true;
+                ItemMessages.Text = $"{diff} gold has been acquired.";
+            }
+
+
+        }
+
+        #endregion
+
+        #region Buttons
+        //Movement
         private void Game_KeyPress(object sender, KeyPressEventArgs e)
         {
             char controls = e.KeyChar;
@@ -221,8 +269,8 @@ namespace GoblinSlayer
 
                                     playerScore++;
                                 }
-                                    //First enemy found.
-                                break;  
+                                //First enemy found.
+                                break;
                             }
 
                             else
@@ -298,26 +346,6 @@ namespace GoblinSlayer
             GDiffCheck();
 
             DrawMap();
-        }
-
-        private void GDiffCheck()
-        {
-            int newAmount = game.Map.Hero.Wallet;
-            int diff = newAmount - playerGold;
-
-            if (diff < 0)
-            {
-                ItemMessages.Visible = true;
-                ItemMessages.Text = $"Purchased {game.Map.Hero.Weapon} have fun!";
-            }
-
-            else if (diff != 0)
-            {
-                ItemMessages.Visible = true;
-                ItemMessages.Text = $"{diff} gold has been acquired.";
-            }
-
-
         }
 
         private void msg_TextChanged(object sender, EventArgs e)
@@ -398,31 +426,32 @@ namespace GoblinSlayer
         //Save
         private void saveButton_Click(object sender, EventArgs e)
         {
-            //stream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "Dungeondata.dat", FileMode.Create, FileAccess.Write);
+            stream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "Dungeondata.dat", FileMode.Create, FileAccess.Write);
 
-            //formatter.Serialize(stream, game);
+            formatter.Serialize(stream, game);
 
-           //stream.Close();
+            stream.Close();
 
-            //ItemMessages.Text = "Game saved successfully.";
-
+            ItemMessages.Text = "Game saved successfully.";
 
         }
 
         //Load
         private void button1_Click(object sender, EventArgs e)
         {
-           // stream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "Dungeondata.dat", FileMode.Open, FileAccess.Read);
+            stream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "Dungeondata.dat", FileMode.Open, FileAccess.Read);
 
-           // game = (GameEngine)formatter.Deserialize(stream);
-            //game.Map.UpdateMap();
-            //DrawMap();
+            game = (GameEngine)formatter.Deserialize(stream);
+            game.Map.UpdateMap();
+            DrawMap();
 
-            //stream.Close();
+            stream.Close();
 
-           // ItemMessages.Text = "Game loaded successfully.";
+            ItemMessages.Text = "Game loaded successfully.";
         }
+        #endregion
 
+        #region Double clicked by mistake
         private void Box_Enter(object sender, EventArgs e)
         {
 
@@ -446,6 +475,28 @@ namespace GoblinSlayer
         private void notificationsContainer_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void playerStats_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        private void viewEnemies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.Focus();
+        }
+
+        private void viewItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.Focus();
+        }
+
+        private void GIWindow_Click(object sender, EventArgs e)
+        {
+            Info info = new Info();
+            info.Show();
         }
     }
 }
