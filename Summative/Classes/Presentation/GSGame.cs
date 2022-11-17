@@ -69,9 +69,6 @@ namespace GoblinSlayer
 
             ItemMessages.Visible = false;
             interactionMsgs.Text = "";
-            Info info = new Info();
-            info.Show();
-            info.BringToFront();
             
 
         }
